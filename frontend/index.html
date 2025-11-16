@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- PWA Configuration -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#00BFFF" />
+  <meta name="background-color" content="#0F1419" />
+  
+  <!-- Métadonnées App -->
+  <title>CarCare - Lavage Ultra-Moderne 2025</title>
+  <meta name="description" content="Application révolutionnaire de lavage de voitures avec design glassmorphique et suivi temps réel" />
+  <meta name="keywords" content="lavage voiture, carwash, nettoyage auto, réservation, suivi temps réel" />
+  <meta name="author" content="CarCare Team" />
+  
+  <!-- Apple PWA Support -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="CarCare" />
+  <link rel="apple-touch-icon" href="/assets/icon-180x180.png" />
+  <link rel="apple-touch-startup-image" href="/assets/splash-640x1136.png" />
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512x512.png" />
+  
+  <!-- Microsoft Tiles -->
+  <meta name="msapplication-TileColor" content="#00BFFF" />
+  <meta name="msapplication-TileImage" content="/assets/icon-144x144.png" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  
+  <!-- SEO & Social -->
+  <meta property="og:title" content="CarCare - Lavage Ultra-Moderne 2025" />
+  <meta property="og:description" content="Application révolutionnaire de lavage de voitures avec design glassmorphique" />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://carcare.app" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CarCare - Interface Révolutionnaire" />
+  <meta name="twitter:description" content="Lavage de voitures avec design glassmorphique 2025" />
+  <meta name="twitter:image" content="/assets/twitter-card.png" />
+  
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+  
+  <!-- Security -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+  
+  <!-- PWA Installation Script -->
+  <script>
+    // Enregistrement immédiat du Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((registration) => {
+            console.log('🚀 CarCare SW enregistré:', registration.scope);
+          })
+          .catch((error) => {
+            console.log('❌ CarCare SW échec:', error);
+          });
+      });
+    }
+  </script>
+</body>
+
+</html>

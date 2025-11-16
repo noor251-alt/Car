@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%
+  }
+
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%
+  }
+}
+
+
+
+img {
+  object-position: top;
+}
+
+.fixed {
+  position: fixed;
+}
+
+/* Safe Areas pour Support Mobile Optimal */
+.safe-area-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-area-left {
+  padding-left: env(safe-area-inset-left);
+}
+
+.safe-area-right {
+  padding-right: env(safe-area-inset-right);
+}
+
+.safe-area-inset {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* Positionnements fixed avec safe areas */
+.fixed-bottom-safe {
+  bottom: env(safe-area-inset-bottom);
+}
+
+.fixed-top-safe {
+  top: env(safe-area-inset-top);
+}
+
+/* Safe Areas Tailwind compatibles */
+.pt-safe-top {
+  padding-top: max(env(safe-area-inset-top), 1rem);
+}
+
+.pb-safe-bottom {
+  padding-bottom: max(env(safe-area-inset-bottom), 1rem);
+}
+
+.pl-safe-left {
+  padding-left: max(env(safe-area-inset-left), 1rem);
+}
+
+.pr-safe-right {
+  padding-right: max(env(safe-area-inset-right), 1rem);
+}
+
+/* Positionnement pour éléments fixes avec safe areas */
+.fixed-top-safe {
+  top: max(env(safe-area-inset-top), 0.75rem);
+}
+
+.fixed-bottom-safe {
+  bottom: max(env(safe-area-inset-bottom), 0.75rem);
+}
+
+.fixed-left-safe {
+  left: max(env(safe-area-inset-left), 0.75rem);
+}
+
+.fixed-right-safe {
+  right: max(env(safe-area-inset-right), 0.75rem);
+}
+
+/* Container principal avec safe areas complètes */
+.screen-container {
+  min-height: 100vh;
+  min-height: 100svh; /* Support navigateurs modernes */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
